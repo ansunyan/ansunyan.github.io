@@ -1,0 +1,543 @@
+:root {
+    --darkgray: #150c10;
+    --pink: #ff1d46;
+    --cooldarkgray: #1f2b38;
+    --catamaran: "Catamaran", sans-serif;
+}
+
+html, body {
+    display: grid;
+    height: 100%;
+    color: var(--darkgray);
+    font-family: 'Dosis', sans-serif;
+}
+
+body {
+    padding-top: 65px;
+}
+
+    body.home {
+        padding: 0;
+    }
+/********* TYPOGRAPHY *********/
+h1 {
+    color: black;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: var(--catamaran);
+}
+
+.navbar-light .navbar-toggler {
+    color: #293ea5;
+    font-family: var(--catamaran);
+}
+
+.intro .h1 {
+    font-size: 1.75rem;
+}
+
+.dark-bg h1,
+.dark-bg #description-title {
+    color: var(--pink);
+}
+
+#description-title:hover {
+    text-decoration: none;
+}
+
+#description-title:before {
+    content: "\f106";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.25em;
+    font-weight: bold;
+}
+
+#description-title.collapsed:before {
+    content: "\f107";
+}
+
+#portfolio .fa-circle {
+    color: #18395f;
+}
+
+#portfolio a:hover .fa-circle {
+    color: black;
+}
+
+p strong {
+    /*color: #038096;*/
+    font-weight: bold;
+}
+/********* LINKS *********/
+a {
+    color: #0644A7;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+p a:hover {
+    text-decoration: underline;
+}
+
+a.nav-link {
+    font-size: 1.5em;
+    font-family: var(--catamaran);
+}
+
+a, button {
+    transition: .3s;
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--pink);
+}
+
+.portfolio__piece > a {
+    display: block;
+    box-sizing: border-box;
+    background-color: var(--cooldarkgray);
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+/********* BUTTONS *********/
+.intro .btn-primary {
+    background-color: var(--pink);
+    border-color: mediumvioletred;
+}
+
+    .intro .btn-primary:hover {
+        background-color: #d80040;
+    }
+
+.intro .btn-light {
+    background: #d1d1d1;
+}
+
+    .intro .btn-light:hover {
+        background-color: #e5e5e5;
+    }
+
+.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#portfolio .btn {
+    text-transform: none;
+}
+
+.btn-light.active {
+    background-color: navy;
+}
+
+.btn .fas {
+    line-height: 24px;
+}
+
+.btn-primary {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-blue {
+    background-color: var(--pink);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+    .btn-blue:hover {
+        background-color: darkorange;
+        color: black;
+    }
+/********* STRUCTURE *********/
+.navbar {
+    background-color: white;
+    padding: 0;
+    box-shadow: 0 0.5rem 2rem var(--darkgray);
+}
+
+.home .navbar {
+    position: fixed;
+    top: -75px;
+    transition: top 0.3s;
+}
+
+.navbar-brand img {
+    height: 50px;
+    margin-left: .75rem;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: .75rem;
+}
+
+    .navbar-toggler:focus {
+        outline: none;
+    }
+
+    .navbar-toggler[aria-expanded="false"] .fa-times {
+        display: none;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .fa-bars {
+        display: none;
+    }
+
+ul.navbar-nav li.nav-item {
+    padding-right: .75rem;
+    padding-left: .75rem;
+    background-color: #fff;
+    border-top: solid 1px #e7e8f3;
+    transition: 0.3s;
+}
+
+    ul.navbar-nav li.nav-item:hover {
+        background-color: #e7e8f3;
+    }
+
+.hero .col-lg-6 {
+    height: 50%
+}
+
+.hero {
+    height: 780px;
+    /*background-image: url('../img/layout/hero-bg-sm.jpg');*/
+    background-image: url('../img/layout/hero-bg.jpg');
+    background-color: #004283;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__image-background,
+.hero__bubbles,
+.hero__character {
+    width: 100%;
+    margin-left: -15px
+}
+
+.hero__image-background {
+    height: 1080px;
+    position: absolute;
+}
+
+.hero__bubbles {
+    height: 100%;
+    background-image: url('../img/layout/hero-middle_01.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    position: absolute;
+}
+
+.hero__character {
+    /*width: 525px;*/
+    height: 100%;
+    background-image: url('../img/layout/hero-bottom.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    position: absolute;
+    /*left: -10%;*/
+}
+
+.intro {
+    padding: 15px;
+    background-color: white;
+    color: #08293c;
+    border-radius: 1rem;
+    position: relative
+}
+
+    .intro:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: 20px solid transparent;
+        border-top-color: #fff;
+        bottom: -40px;
+        left: calc(50% - 20px)
+    }
+
+    .intro .btn {
+        font-size: 1rem
+    }
+
+.dark-bg {
+    background: var(--darkgray);
+    color: white;
+}
+
+#portfolio {
+    background-color: var(--darkgray);
+    color: var(--pink);
+}
+
+.portfolio-links {
+    position: relative;
+}
+
+.portfolio-links__gradient {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 4rem;
+    top: 0;
+    transition: .3s;
+}
+
+    .portfolio-links__gradient.portfolio-links__gradient--start {
+        background: linear-gradient(90deg,var(--darkgray),transparent);
+        left: 0;
+        visibility: hidden
+    }
+
+    .portfolio-links__gradient.portfolio-links__gradient--end {
+        background: linear-gradient(90deg,transparent,var(--darkgray));
+        right: 0;
+        visibility: visible
+    }
+
+.nav--portfolio-links {
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: calc(100vw - 30px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+    .nav--portfolio-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav--portfolio-links .nav-item {
+        flex-basis: 0;
+        flex-grow: 1;
+        white-space: nowrap;
+        margin: 0 0.125rem;
+    }
+
+    .nav--portfolio-links .nav-link {
+        background-color: #1e1e1e;
+        border: none;
+        color: #fff;
+        outline: none;
+        border-radius: 9999px;
+    }
+
+        .nav--portfolio-links .nav-link:hover {
+            background-color: var(--cooldarkgray);
+        }
+
+        .nav--portfolio-links .nav-link.active {
+            background-color: var(--pink);
+        }
+
+.portfolio__piece img,
+.portfolio__piece .details-cta {
+    transition: 0.5s;
+}
+
+.portfolio__piece img {
+    opacity: 0.62;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.portfolio__piece:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.portfolio__piece .details-cta {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.portfolio__piece:hover .details-cta {
+    color: black;
+    background-color: var(--cooldarkgray);
+}
+
+.portfolio__piece .details-cta a {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.72);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+.footer {
+    border-top: solid 4px #5671ad;
+    background-color: #0a2d44;
+    color: white;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+    .video-container iframe, .video-container object, .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+@media (min-width: 576px) {
+    ul.navbar-nav li.nav-item {
+        border: none;
+    }
+
+        ul.navbar-nav li.nav-item:hover {
+            background-color: transparent;
+        }
+
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+        color: var(--pink);
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #5671ad;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-position: top center;
+    }
+
+    .hero__bubbles {
+        background-size: contain;
+        width: 55%;
+        top: 18%;
+    }
+
+    .intro {
+        background-color: transparent;
+        color: white
+    }
+
+        .intro:after {
+            display: none
+        }
+
+        .intro .h1 {
+            font-size: 2.5rem;
+        }
+
+        .intro strong {
+            color: white;
+        }
+
+        .intro .btn {
+            font-size: 1.25rem
+        }
+
+        .intro .btn-light {
+            background: white;
+        }
+
+    #description {
+        display: block;
+    }
+
+    .portfolio-links__gradient {
+        display: none
+    }
+}
+
+@media (min-width: 992px) {
+    .hero .col-lg-6 {
+        height: auto
+    }
+
+    ul.navbar-nav li.nav-item {
+        background-color: transparent;
+        border-top: none;
+    }
+
+    .hero__bubbles {
+        width: 52%;
+        top: 12%;
+    }
+
+    .hero__character {
+        width: 570px;
+    }
+
+    #description {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero {
+        height: 720px;
+    }
+
+    .hero__bubbles {
+        width: 675px;
+        left: -1%;
+        top: 11%;
+    }
+
+    .hero__character {
+        width: 575px;
+        height: 725px;
+        left: 5%;
+    }
+
+    .nav--portfolio-links {
+        width: 75%;
+        max-width: 1280px
+    }
+}
+
+
+@media (min-width: 1900px) {
+    .hero {
+        height: 100vh;
+    }
+
+        .hero .container {
+            max-width: 1800px
+        }
+
+    .hero__bubbles {
+        width: 849px;
+        left: 2%;
+        top: 5%;
+    }
+
+    .hero__character {
+        width: 706px;
+        height: 100%;
+        left: 7%;
+    }
+
+    .nav--portfolio-links {
+        width: 60%;
+    }
+}

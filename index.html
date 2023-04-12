@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MW74SRX');</script>
+    <!-- End Google Tag Manager -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The online portfolio of Ansun Yan - web designer, graphic designer, and digital media designer." />
+    <meta name="keywords" content="ansun yan, illustrator, illustration, gallery, graphic design, graphic designer, portfolio, web design, web designer, website, print media, video, motion graphic design, motion graphic designer">
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <title>Ansun Yan's Online Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+</head>
+<body class="home" id="top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW74SRX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="index.html#top"><img src="img/layout/ansun-signature.png" alt="Ansun Yan's Online Portfolio" class="img-fluid" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i><i class="fas fa-times"></i><br>
+                Menu
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link" href="index.html#top">About & Contact<span class="sr-only">(current)</span></a> </li>
+                    <li class="nav-item dropdown"> <a class="nav-link" href="index.html#portfolio">Portfolio</a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="text-center">
+            <div class="hero">
+                <div class="container h-100 p-0">
+                    <div class="row mt-0 mb-0 ml-auto mr-auto h-100">
+                        <div class="col-lg-6 hero__image order-2 order-lg-1">
+                            <div class="hero__image-background"></div>
+                            <div class="hero__bubbles"></div>
+                            <div class="hero__character"></div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center text-lg-left order-lg-1 order-lg-2">
+                            <section class="intro">
+                                <h2 class="h1 mb-4">
+                                    Hi, I'm Ansun Yan. I design websites, graphics, and digital media that pop.
+                                </h2>
+                                <p class="lead mb-5 d-none d-sm-block">I'm a seasoned <strong>web designer</strong>, <strong>graphic designer</strong>, and <strong>digital media designer</strong> who's helped businesses and organizations achieve higher profiles.</p>
+                                <a href="#portfolio" class="btn btn-primary btn-lg mr-2 mb-3">See my portfolio</a>
+                                <a href="mailto:ansun@live.ca" class="btn btn-light btn-lg mb-3">E-mail me</a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="container-fluid pt-4" id="portfolio">
+                <h2 class="h1">Portfolio</h2>
+                <div class="portfolio-links">
+                    <div class="portfolio-links__gradient portfolio-links__gradient--start"></div>
+                    <ul class="nav nav--portfolio-links mt-4 mb-5">
+                        <li class="nav-item">
+                            <button class="nav-link w-100" @click="currentTag = 'all'" :class="{active: currentTag == 'all'}" v-on:click="filter('all')">All</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link w-100" @click="currentTag = 'web'" :class="{active: currentTag == 'web'}" v-on:click="filter('web')">Web Design</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link w-100" @click="currentTag = 'graphic'" :class="{active: currentTag == 'graphic'}" v-on:click="filter('graphic')">Graphic Design</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link w-100" @click="currentTag = 'branding'" :class="{active: currentTag == 'branding'}" v-on:click="filter('branding')">Branding</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link w-100" @click="currentTag = 'ux'" :class="{active: currentTag == 'ux'}" v-on:click="filter('ux')">UX Design</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link w-100" @click="currentTag = 'video'" :class="{active: currentTag == 'video'}" v-on:click="filter('video')">Video</button>
+                        </li>
+                    </ul>
+                    <div class="portfolio-links__gradient portfolio-links__gradient--end"></div>
+                </div>
+                <transition-group class="row" tag="div">
+                    <div v-for="item in filteredItems" v-bind:key="item.id" class="col-xl-3 col-lg-4 col-sm-6 col-12 pl-1 pr-1 mb-2 portfolio__piece">
+                        <a :href="item.id + '.html'">
+                            <img :src="'img/thumbnails/' + item.id + '.' + item.format" :alt="item.alt" class="img-fluid" />
+                        </a>
+                        <div class="p-2 text-left details-cta"><a :href="item.id + '.html'">{{item.alt}}</a></div>
+                    </div>
+                </transition-group>
+            </section>
+        </div>
+    </main>
+    <div class="overlay d-none"></div>
+    <footer>
+        <div class="footer container-fluid text-center pt-2 pb-2"> <small>This website was designed by Ansun Yan.</small> </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/gallery-tags.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://kit.fontawesome.com/d10e784283.js" crossorigin="anonymous"></script>
+</body>
+</html>
